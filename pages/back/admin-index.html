@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>张毅教学系统</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="../../js/amazeUI/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="../../js/amazeUI/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="../../js/amazeUI/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="../../js/amazeUI/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+    <strong>张毅教学系统</strong> <small>后台管理</small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+      <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-mortar-board"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="admin-user.html"><span class="am-icon-newspaper-o"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="javascript:void(0)"  onclick="logout();"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+      <ul class="am-list admin-sidebar-list">
+        <li><a href="admin-index.html"><span class="am-icon-home"></span> 首页</a></li>
+        <!--<li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 页面模块 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 个人资料<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 帮助页</a></li>
+            <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 相册页面<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+            <li><a href="admin-log.html"><span class="am-icon-calendar"></span> 系统日志</a></li>
+            <li><a href="admin-404.html"><span class="am-icon-bug"></span> 404</a></li>
+          </ul>
+        </li>-->
+        <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-teacher'}"><span class="am-icon-user"></span> 教师管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-teacher" style="height: 0px;">
+            <li><a href="admin-teacherAdd.html" class="am-cf"><span class="am-icon-plus"></span> 新增教师信息</span></a></li>
+            <li><a href="admin-teacherRole.html"><span class="am-icon-users"></span> 教师角色增删</a></li>
+            <li><a href="admin-teacherList.html"><span class="am-icon-table"></span> 教师信息列表</a></li>
+          </ul>
+        </li>
+        <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-question'}"><span class="am-icon-database"></span> 题库管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-question" style="height: 0px;">
+            <li><a href="admin-questionAdd.html" class="am-cf"><span class="am-icon-plus"></span> 新增试题</a></li>
+            <li><a href="admin-questionList.html"><span class="am-icon-table"></span> 试题列表</a></li>
+          </ul>
+        </li>
+         <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-student'}"><span class="am-icon-female"></span> 学生管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-student" style="height: 0px;">
+          	<li><a href="admin-studentClassAdd.html" class="am-cf"><span class="am-icon-plus"></span> 新增班级信息</a></li>
+            <li><a href="admin-studentClassList.html"><span class="am-icon-table"></span> 班级信息列表</a></li>
+            <li><a href="admin-studentAdd.html" class="am-cf"><span class="am-icon-plus"></span> 新增学生信息</a></li>
+            <li><a href="admin-studentList.html"><span class="am-icon-table"></span> 学生信息列表</a></li>
+          </ul>
+        </li>
+       <!-- <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-parent'}"><span class="am-icon-user-secret"></span> 家长管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-parent" style="height: 0px;">
+            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-plus"></span> 家长人员新增<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="admin-gallery.html"><span class="am-icon-table"></span> 家长信息列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+          </ul>
+        </li>
+       
+        <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-course'}"><span class="am-icon-book"></span> 课程管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-course" style="height: 0px;">
+            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-plus"></span> 新增课程信息<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 课程信息列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+          </ul>
+        </li>-->
+        <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-testPaper'}"><span class="am-icon-file"></span> 试卷管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-testPaper" style="height: 0px;">
+            <li><a href="admin-testPaperAddByModel.html" class="am-cf"><span class="am-icon-plus"></span> 按模块新增试卷</a></li>
+            <li><a href="admin-testPaperAddByDemand.html" class="am-cf"><span class="am-icon-plus"></span> 按要求新增试卷</a></li>
+            <li><a href="admin-testPaperList.html"><span class="am-icon-th"></span> 试卷列表</a></li>
+          </ul>
+        </li>
+        <!--
+        
+        
+        
+        <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-homework'}"><span class="am-icon-file"></span> 作业管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-homework" style="height: 0px;">
+            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 家长人员新增<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 家长基本信息</a></li>
+            <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 家长信息列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+          </ul>
+        </li>
+        <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-recruitStudents'}"><span class="am-icon-file"></span> 招生管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-recruitStudents" style="height: 0px;">
+            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 家长人员新增<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 家长基本信息</a></li>
+            <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 家长信息列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+          </ul>
+        </li>
+        <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-system'}"><span class="am-icon-file"></span> 系统管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-system" style="height: 0px;">
+            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 家长人员新增<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 家长基本信息</a></li>
+            <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 家长信息列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+          </ul>
+        </li>
+        <li class="admin-parent">
+          <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-other'}"><span class="am-icon-file"></span> 其它管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-other" style="height: 0px;">
+            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 家长人员新增<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 家长基本信息</a></li>
+            <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 家长信息列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+          </ul>
+        </li>-->
+        <!--<li><a href="admin-table.html"><span class="am-icon-table"></span> 表格</a></li>
+        <li><a href="admin-form.html"><span class="am-icon-pencil-square-o"></span> 表单</a></li>-->
+        <li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> / <small>信息概述</small></div>
+      </div>
+			<!--校长权限显示-->
+      <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+        <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-flag"></span><br/>联盟学校<br/>32所</a></li>
+        <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-user"></span><br/>师资人员<br/>308位</a></li>
+        <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-female"></span><br/>学生总数<br/>80082人</a></li>
+        <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-database"></span><br/>题库数量<br/>1233000道</a></li>
+      </ul>
+      <!--教师权限显示-->
+      <!--<ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+        <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-flag"></span><br/>所带班级<br/>5个</a></li>
+        <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-user"></span><br/>学生总数<br/>159人</a></li>
+        <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-female"></span><br/>王者段位<br/>25人</a></li>
+        <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-database"></span><br/>做题数量<br/>3000道</a></li>
+      </ul>-->
+			<!--校长显示全部班级，教师只显示本班级信息-->
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <table class="am-table am-table-bd am-table-striped admin-content-table">
+            <thead>
+            <tr>
+              <th>班级名</th>
+              <th>年级</th>
+              <th>学生数量</th>
+              <th>班主任</th>
+              <th>管理</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            	<td>301班</td>
+            	<td>七年级</td>
+            	<td>22</td>
+            	<td>朱英才</td>
+              <td>
+                <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">
+                    <li><a href="#">查看</a></li>
+                    <li><a href="#">下载</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            <tr>
+            	<td>302班</td>
+            	<td>八年级</td>
+            	<td>33</td>
+            	<td>朱英才</td>
+              <td>
+                <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">
+                    <li><a href="#">查看</a></li>
+                    <li><a href="#">下载</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            <tr>
+            	<td>303班</td>
+            	<td>九年级</td>
+            	<td>45</td>
+            	<td>朱英才</td>
+              <td>
+                <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">
+                    <li><a href="#">查看</a></li>
+                    <li><a href="#">下载</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            <tr>
+            	<td>304班</td>
+            	<td>七年级</td>
+            	<td>26</td>
+            	<td>朱英才</td>
+              <td>
+                <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">
+                    <li><a href="#">查看</a></li>
+                    <li><a href="#">下载</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            <tr>
+            	<td>305班</td>
+            	<td>六年级</td>
+            	<td>35</td>
+            	<td>朱英才</td>
+              <td>
+                <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">
+                    <li><a href="#">查看</a></li>
+                    <li><a href="#">下载</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+         	<ul class="am-list">
+         		<li class="am-u-sm-12 am-u-md-12 am-u-lg-12 am-padding-sm">
+         			<!-- 校长权限 -->
+          		<div id="teacher" class="am-cf am-u-md-8 am-u-md-push-2 am-u-lg-6 am-u-lg-push-3"></div>
+         		</li>
+         		<li class="am-u-sm-12 am-u-md-12 am-u-lg-12 am-padding-sm">
+         			<!-- 教师权限 -->
+          		<div id="grade" class="am-cf am-u-md-8 am-u-md-push-2 am-u-lg-6 am-u-lg-push-3"></div>
+         		</li>
+         		<li class="am-u-sm-12 am-u-md-12 am-u-lg-12 am-padding-sm">
+         			<!-- 教师权限 -->
+          		<div id="student" class="am-cf am-u-md-8 am-u-md-push-2 am-u-lg-6 am-u-lg-push-3"></div>
+         		</li>
+         	</ul>
+        </div>
+      </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+  </div>
+  <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="../../js/amazeUI/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="../../js/jquery-1.8.3/jquery-1.8.3.min.js"></script>
+<!--<![endif]-->
+<script src="../../js/amazeUI/js/amazeui.min.js"></script>
+<script src="../../js/amazeUI/js/app.js"></script>
+<script src="../../js/Highcharts-5.0.4/code/highcharts.js"></script>
+<script src="../../js/Highcharts-5.0.4/highchartsUtil.js"></script>
+<script language="JavaScript">
+$(document).ready(function() {
+   $('#teacher').getPie("本校区教师学历所占比例",[
+         ['大学',   45.0],
+         ['本科',       26.8],
+         {
+            name: '博士',
+            y: 12.8
+         },
+         ['中专',    8.5],
+         ['高中',     6.2],
+         ['其它',   0.7]
+      ]);
+  $('#grade').getPie("教师班级所占比例",[
+         ['一年级',   45.0],
+         ['二年级',       26.8],
+         {
+            name: '三年级',
+            y: 12.8
+         },
+         ['初中',    8.5],
+         ['学前班',     6.2],
+         ['其它', 0.7]]);
+
+			$("#student").getCurveGraph("405班【周依名】五月份第一周成绩图", ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"],"成绩分数", [{
+					name: "语文",
+					data: [77, 88, 62, 32, 45, 32, 15]
+				},
+				{
+					name: "数学",
+					data: [66, 32, 78, 44, 98, 87, 65]
+				},
+				{
+					name: "英文",
+					data: [0, 100, 45, 89, 99, 54, 25]
+				}
+			]);
+});
+function logout() {
+	if(confirm("确定要退出吗？")) {
+		var browserName = navigator.appName;
+		if(browserName == "Netscape") {
+			//window.open('', '_self', '');
+			window.open("about:blank","_self").close();
+			window.close();
+		}else if(browserName == "Microsoft Internet Explorer") {
+			window.parent.opener = "whocares";
+			window.parent.close();
+		}else{
+			
+		}
+	}
+}
+</script>
+</body>
+</html>

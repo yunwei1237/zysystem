@@ -1,0 +1,35 @@
+
+/*
+ * sm
+ */
+@media only screen and (max-width: 640px){
+	body{
+		font-size: 0.8rem;
+	}
+}
+/*
+ * md
+ */
+@media only screen and (min-width: 641px){
+	body{
+		font-size: 1.2rem;
+	}
+}
+/**
+ * lg 
+ */
+@media only screen and (min-width: 1025px){
+	body{
+		font-size: 1.6rem;
+	}
+}
+
+.am-list-unstyle{
+	margin: 0px;
+	list-style-type: none;
+	padding: 0px;
+}
+.am-list-unstyle>li{
+	padding: 0px;
+	margin: 0px;
+}

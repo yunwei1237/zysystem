@@ -1,0 +1,41 @@
+/*
+ * sm
+ */
+@media only screen and (max-width: 640px){
+	#role-opr{
+		margin: 10px 0px;
+	}
+	#role-opr>li{
+		
+	}
+}
+/*
+ * md
+ */
+@media only screen and (min-width: 641px){
+	#role-opr{
+		margin: 28px 0px;
+	}
+	#role-opr>li{
+		text-align: center;
+	}
+}
+/**
+ * lg 
+ */
+@media only screen and (min-width: 1025px){
+	#role-opr{
+		margin: 30px 0px;
+	}
+	#role-opr>li{
+		text-align: center;
+	}
+}
+
+select[multiple]{
+	width: 100%;
+}
+#submit{
+	margin: 25px 0px;
+	padding:0px;
+}

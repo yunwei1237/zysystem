@@ -365,7 +365,7 @@
 				}
 				tags.append("<span class='am-badge am-radius' style='margin:2px;'>"+difficultyName+"</span>");
 				tags.append("<span class='am-badge am-badge-warning am-radius' style='margin:2px;'>做错"+question.mistakes+"次</span>");
-				tags.append("<span class='am-badge am-badge-success am-radius' style='margin:2px;'>正确率"+NumberUtils.toString((question.used-question.mistakes)/question.used*100)+"%</span>");
+				tags.append("<span class='am-badge am-badge-success am-radius' style='margin:2px;'>正确率"+NumberUtils.toFixed((question.used-question.mistakes)/question.used*100)+"%</span>");
 				tags.append("<span class='am-badge am-badge-secondary am-radius' style='margin:2px;'>共使用"+question.used+"次</span>");
 	  		li.append(tags);
 	  		ul.append(li);

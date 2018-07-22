@@ -2,9 +2,77 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var seekBar = document.getElementsByClassName("seekBar")[0];
+				var label = seekBar.getElementsByClassName("label")[0];
+				var slider = seekBar.getElementsByClassName("slider")[0];
+				/*slider.addEventListener("onmousemove",function(event){
+					var x = event.pageX;
+					console.log(x);
+					slider.style.left = x + "px";
+				});*/
+				seekBar.down = false;
+				seekBar.ontouchstart = function(){
+					seekBar.down = true;
+				}
+				seekBar.onmousedown = function(){
+					seekBar.down = true;
+				}
+				seekBar.onmouseup = function(){
+					seekBar.down = false;
+				}
+				seekBar.ontouchend = function(){
+					seekBar.down = false;
+				}
+				seekBar.onmouseleave = function(){
+					seekBar.down = false;
+				}
+				/*seekBar.ontouchend = function(event){
+					var w = seekBar.clientWidth;
+					console.log(w);
+					var x = event.touches[0].pageX-14;
+					slider.style.left = x + "px";
+					label.innerHTML = x/w*100;
+				}*/
+				seekBar.onclick = function(event){
+					var w = seekBar.clientWidth;
+					console.log(w);
+					var x = event.pageX-14;
+					slider.style.left = x + "px";
+					label.innerHTML = x/w*100;
+				}
+				seekBar.ontouchmove = function(event){
+					if(seekBar.down){
+						var w = seekBar.clientWidth;
+						console.log(w);
+						var x = event.touches[0].pageX-14;
+						slider.style.left = x + "px";
+						label.innerHTML = x/w*100;
+					}
+				}
+				seekBar.onmousemove = function(event){
+					if(seekBar.down){
+						var w = seekBar.clientWidth;
+						console.log(w);
+						var x = event.pageX-14;
+						slider.style.left = x + "px";
+						label.innerHTML = x/w*100;
+					}
+				}
+
+				seekBar.ontouchstart
+			}
+		</script>
 	</head>
 	<body>
-		
+		<div class="seekBar" style="position: relative;height: 30px;">
+			<div class="line" style="position:absolute;border-top: 2px #c7c7c7 solid;width: 100%;margin: 5px 0px;top:50%;"></div>
+			<div class="slider" style="position:absolute;width: 12px;height: 12px; border-radius: 50%;border:1px #CCC solid;background: #fff;top:50%;left: 50px;">
+				<span class="label" style="position: relative;font-size: 10px;top:-22px;left:-2px;color: #5c5c5c;">22</span>
+			</div>
+		</div>
 	</body>
 </html>

@@ -193,6 +193,28 @@
 							$(".admin-content").animate({scrollTop:0},500,"swing");
 						}
 					}, {
+                        title:"向上移动",
+                        iconClass:"am-icon-angle-double-up",
+                        fun:function(){
+                            var top = $(".admin-content")[0].scrollTop;
+                            if(top == null){
+                                top = 0;
+                            }
+                            var pageHeight = window.screen.height;
+                            $(".admin-content").animate({scrollTop:top-pageHeight},500,"swing");
+                        }
+                    },{
+                        title:"向下移动",
+                        iconClass:"am-icon-angle-double-down",
+                        fun:function(){
+                            var top = $(".admin-content")[0].scrollTop;
+                            if(top == null){
+                                top = 0;
+                            }
+                            var pageHeight = window.screen.height;
+                            $(".admin-content").animate({scrollTop:top+pageHeight},500,"swing");
+                        }
+                    },{
 						title:"回到底部",
 						iconClass:"am-icon-arrow-down",
 						fun:function(){

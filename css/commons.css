@@ -33,3 +33,7 @@
 	padding: 0px;
 	margin: 0px;
 }
+
+.am-hover:hover{
+	background-color: #eee;
+}

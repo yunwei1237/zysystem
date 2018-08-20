@@ -606,6 +606,29 @@ NumberUtils.countZero = function(obj){
     }
     return obj.length - new String(parseInt(obj)).length;
 }
+/**
+ * 判断一个数字是不是在指定范围之内
+ * @param obj
+ * @param start
+ * @param end
+ * @returns {boolean}
+ */
+NumberUtils.isBetween = function(obj,start,end){
+    return obj <= end && obj >= start;
+}
+/**
+ * 限制数字的大小到指定范围
+ * @param obj
+ * @param min 最小值 超出最小值就取最小值
+ * @param max 最大值 超出最大值就取最大值
+ */
+NumberUtils.clamp = function(obj,min,max){
+    if(obj<min) return min;
+    if(obj>max) return max;
+    if(NumberUtils.isBetween(obj,min,max)){
+        return obj;
+    }
+}
 let RandomUtils = {};
 /**
  * 获得随机数

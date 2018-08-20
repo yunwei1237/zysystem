@@ -90,136 +90,26 @@
   <div class="admin-content">
     <div class="admin-content-body">
       <div class="am-cf am-padding am-padding-bottom-0">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">试卷管理</strong> / <small>按要求新增试卷</small></div>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">试卷管理</strong> / <small>试卷修改</small></div>
       </div>
       <hr/>
       <div class="am-container">
       	<div class="am-cf">
-      		<div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
-	      		<div class="am-form-group am-text-center">
-				      <input type="text" class="" placeholder="输入试卷名称" style="width: 80%;">
-				    </div>
-	      	</div>
-	      	<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-				      <div class="am-form-group">
-				        <select name="questionType" data-am-selected="{btnSize: 'sm'}">
-				          <option value="-1">请选择试题类型</option>
-				          <option value="1" selected>选择题</option>
-				          <option value="2">简答题</option>
-				        </select>
-				      </div>
-				  </div>
-				  <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-			      <div class="am-form-group">
-			        <select name="gradeId" data-am-selected="{btnSize: 'sm'}">
-			          <option value="-1">请选择年级</option>
-			          <option value="1">学前班</option>
-			          <option value="2">一年级</option>
-			          <option value="3">二年级</option>
-			          <option value="4">三年级</option>
-			          <option value="5" selected>四年级</option>
-			          <option value="6">五年级</option>
-			          <option value="7">六年级</option>
-			          <option value="8">七年级</option>
-			          <option value="9">八年级</option>
-			        </select>
-			      </div>
-			    </div>
-			    <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-			      <div class="am-form-group">
-			        <select name="subjectId" data-am-selected="{btnSize: 'sm'}">
-			          <option value="-1">请选择科目</option>
-			          <option value="1">语文</option>
-			          <option value="2">数学</option>
-			          <option value="3" selected>英语</option>
-			          <option value="4">化学</option>
-			          <option value="5">物理</option>
-			          <option value="6">地理</option>
-			          <option value="7">美术</option>
-			          <option value="8">音乐</option>
-			        </select>
-			      </div>
-			    </div>
-			    <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-			      <div class="am-form-group">
-			        <select name="chapterId" data-am-selected="{btnSize: 'sm'}">
-			          <option value="-1">请选择章节</option>
-			          <option value="1">第一章、什么是数字</option>
-			          <option value="2">第一章、什么是符号</option>
-			          <option value="3" selected>第一章、什么是操作符</option>
-			          <option value="4">第一章、什么是分支结构</option>
-			        </select>
-			      </div>
-			    </div>
-			    <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-	          <div class="am-form-group">
-	            <select name="chapterId" data-am-selected="{btnSize: 'sm'}">
-	              <option value="-1">请选择难易程度</option>
-	              <option value="200">新手（200）</option>
-	              <option value="400">熟手（400）</option>
-	              <option value="600">高手（600）</option>
-	              <option value="800">神手（800）</option>
-	              <option value="1000">圣手（1000）</option>
-	            </select>
-	          </div>
-	        </div>
-	      	<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-	          <div class="am-form-group"  >
-	            <select id="timeSelect" data-am-selected="{btnSize: 'sm'}">
-	              <option value="-1">请选择试卷总时间</option>
-	              <option value="5">5分钟</option>
-	              <option value="10">10分钟</option>
-	              <option value="20">20分钟</option>
-	              <option value="30">30分钟</option>
-	              <option value="50">50分钟</option>
-	              <option value="60">60分钟</option>
-	              <option value="80">80分钟</option>
-	              <option value="100">100分钟</option>
-	              <option value="120">120分钟</option>
-	            </select>
-	          </div>
-	        </div>
-	        <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-	          <div class="am-form-group"  >
-	            <select id="scoreSelect" data-am-selected="{btnSize: 'sm'}">
-	              <option value="-1">请选择试卷的总分数</option>
-	               <option value="5">5分</option>
-	              <option value="10">10分</option>
-	              <option value="20">20分</option>
-	              <option value="30">30分</option>
-	              <option value="50">50分</option>
-	              <option value="60">60分</option>
-	              <option value="80">80分</option>
-	              <option value="100">100分</option>
-	              <option value="120">120分</option>
-	            </select>
-	          </div>
-	        </div>
-	        <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-			      <div class="am-form-group am-text-left">
-			        <button type="button" class="am-btn am-btn-primary am-btn-sm">查找</button>
-			      </div>
-					</div>
-      	</div>
-		  <div id="questionList"></div>
-		  <div class="am-cf">
-              	共 2687 条记录
-              <div class="am-fr">
-                <ul class="am-pagination">
-                  <li class="am-disabled"><a href="#">«</a></li>
-                  <li class="am-active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">»</a></li>
-                </ul>
-              </div>
-            </div>
-				</div>
+			<h2 class="am-text-center">三年级数学下册英文小测试</h2>
+			<ul class="am-list am-list-border am-cf">
+			  <li class="am-u-sm-12 am-u-md-6 am-u-lg-3"><strong>类型：</strong>选择题</li>
+			  <li class="am-u-sm-12 am-u-md-6 am-u-lg-3"><strong>年级：</strong>四年级</li>
+			  <li class="am-u-sm-12 am-u-md-6 am-u-lg-3"><strong>学科：</strong>数学</li>
+			  <li class="am-u-sm-12 am-u-md-6 am-u-lg-3"><strong>章节：</strong>第一章、什么是数字</li>
+			  <li class="am-u-sm-12 am-u-md-6 am-u-lg-3"><strong>难度：</strong>高手</li>
+			  <li class="am-u-sm-12 am-u-md-6 am-u-lg-3"><strong>时间：</strong>100分钟</li>
+			  <li class="am-u-sm-12 am-u-md-6 am-u-lg-3"><strong>总分：</strong>100分</li>
+			  <li class="am-u-sm-12 am-u-md-6 am-u-lg-3"><strong>标签：</strong>小学智力</li>
+			</ul>
+		  	<div id="questionList"></div>
+		</div>
       </div>
     </div>
-
   <footer class="admin-content-footer">
     <hr>
     <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
@@ -229,12 +119,12 @@
 
 	<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
 </div>
-<div  id="questionCart" style="position:absolute;top: 30%; right: 5%;">
-	<a class="am-icon-btn">
-		<span class="am-icon-shopping-cart am-icon-sm" ></span>
-		<span class="am-badge am-badge-danger am-round questionCount" style="position: relative;top:-70px;right: -20px;">6</span>
-	</a>
-</div>
+<!--<div  id="questionCart" style="position:absolute;top: 30%; right: 5%;width: 50px;">
+  <a href="javascript:void(0);" title="回到顶部" class="am-icon-arrow-up am-icon-btn" style="margin-bottom: 5px;"></a>
+  <a href="javascript:void(0);" title="试题删除" class="am-icon-remove am-icon-btn" style="margin-bottom: 5px;"></a>
+  <a href="javascript:void(0);" title="试题添加" class="am-icon-plus am-icon-btn" style="margin-bottom: 5px;"></a>
+  <a href="javascript:void(0);" title="试题重置" class="am-icon-undo am-icon-btn" style="margin-bottom: 5px;"></a>
+</div>-->
 <!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
@@ -265,7 +155,7 @@
 <script type="text/javascript">
 		$(function(){
 			let questions = [];
-			for(let i = 0;i<5;i++){
+			for(let i = 0;i<100;i++){
 				questions.push({
 					id:i,
 					questionTitle:"以下哪个不是水果()",
@@ -273,8 +163,8 @@
 					optionB:"柿子",
 					optionC:"草莓",
 					optionD:"水果",
-					optionE:null,
-					optionF:null,
+					/*optionE:"香蕉",
+					optionF:"荔枝",*/
 					answer:"D",
 					answerDetail:"水果只是统一名称,并不是某类水果的名称",
 					difficulty:RandomUtils.random(0,1001),
@@ -291,33 +181,65 @@
 					"报错":function(){
 						alert("报错");
 					},
-					"添加":function(){
-						alert("添加");
-					}
+                    "删除":function(){
+						alert("删除");
+                    }
 				}
 			});
-
-			$("#questionCart").click(function(){
-				$.popup({
-					title:"挑选的题",
-					fun:function(body) {
-                        $(body).fillQuestion({
-                            questions:questions,
-                            selected:true,
-                            buttons:{
-                                "删除":function(){
-                                    alert("删除");
-                                }
-                            }
-                        });
-                    },
-					buttons:{
-					    "预览":function(){
-                            alert("预览");
+			$.floatToolBar({
+                top:30,
+                right:5,
+                direction:"vertical",
+                buttons:[
+                    {
+                    	title:"回到顶部",
+                        iconClass:"am-icon-arrow-up",
+                        fun:function(){
+							$(".admin-content").animate({scrollTop:0},500,"swing");
                         }
+                    },{
+						title:"试题删除",
+						iconClass:"am-icon-remove",
+						fun:function(){
+							//$.alert({content:"试题删除"});
+							$.popupList({
+                                title:"试题快速删除",
+                                listFun:function(ul){
+                                	ul.append(StringUtils.format("<li title='删除该难度以上全部试题'><strong>难度：</strong>%s</li>",$.form.checkedGroup({name:"difficulty",data:{200:"新手",400:"熟手",600:"高手",800:"神手",1000:"圣手"},style:"margin:5px;"})));
+                                	ul.append(StringUtils.format("<li title='删除选中标签的全部试题'><strong>标签：</strong>%s</li>",$.form.checkedGroup({name:"tags",type:"checkbox",data:{1:"时间换算",2:"几何图",3:"平面",4:"英文",5:"面积",6:"小数",7:"分数",8:"一元一次方程",9:"二元一次方程",9:"集合",10:"随机数",11:"概率"},style:"margin:5px;"})));
+                                	ul.append("<li title='删除指定正确率以下全部试题'><strong>正确率：</strong><input type='range' min='0' max='100' style='width: 100%;' /></li>");
+                                },
+                                buttons:{
+                                	"确定":function(){
+                                		alert("删除成功!");
+                                    }
+                                }
+                            });
+						}
+					},{
+						title:"试题添加",
+						iconClass:"am-icon-plus",
+						fun:function(){
+							$.alert({content:"试题添加"});
+						}
+					},{
+						title:"试题重置",
+						iconClass:"am-icon-undo",
+						fun:function(){
+							$.alert({content:"试题重置"});
+						}
+					}, {
+						title:"回到底部",
+						iconClass:"am-icon-arrow-down",
+						fun:function(){
+							$(".admin-content").animate({scrollTop:$(".admin-content-body").height()},500,"swing");
+						}
 					}
-				});
-			});
+                ]
+            });
+			$("h3").each(function(i,item){
+				$(item).alert({content:$(item).html()});
+            });
 		});
 </script>
 </body>

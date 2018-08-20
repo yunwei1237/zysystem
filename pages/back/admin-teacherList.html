@@ -173,8 +173,30 @@
                   <div class="am-dropdown" data-am-dropdown>
 									  <a class="am-btn am-btn-primary am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></a>
 									  <ul class="am-dropdown-content">
-									    <li><a href="#">查看</a></li>
-									    <li><a href="#">修改</a></li>
+                                        <li><a href="admin-teacherView.html">查看</a></li>
+                                        <li><a href="admin-teacherModify.html">修改</a></li>
+                                        <li><a href="admin-teacherRole.html">角色</a></li>
+                                        <li><a href="#" onclick="del()">删除</a></li>
+									  </ul>
+									</div>
+                </td>
+              </tr>
+              <tr>
+                <td>archer</td>
+                <td>张毅</td>
+                <td class="am-hide-sm-only">18790910745</td>
+                <td class="am-hide-sm-only">18790910745</td>
+                <td class="am-hide-sm-only">267898765</td>
+                <td class="am-hide-sm-only">河南省漯河市源汇区问十乡问十村4组22号</td>
+                <td>正常</td>
+                <td class="am-hide-sm-only">超级管理员</td>
+                <td>
+                  <div class="am-dropdown" data-am-dropdown>
+									  <a class="am-btn am-btn-primary am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></a>
+									  <ul class="am-dropdown-content">
+									    <li><a href="admin-teacherView.html">查看</a></li>
+									    <li><a href="admin-teacherModify.html">修改</a></li>
+                                        <li><a href="admin-teacherRole.html">角色</a></li>
 									    <li><a href="#">删除</a></li>
 									  </ul>
 									</div>
@@ -195,26 +217,7 @@
 									  <ul class="am-dropdown-content">
 									    <li><a href="#">查看</a></li>
 									    <li><a href="#">修改</a></li>
-									    <li><a href="#">删除</a></li>
-									  </ul>
-									</div>
-                </td>
-              </tr>
-              <tr>
-                <td>archer</td>
-                <td>张毅</td>
-                <td class="am-hide-sm-only">18790910745</td>
-                <td class="am-hide-sm-only">18790910745</td>
-                <td class="am-hide-sm-only">267898765</td>
-                <td class="am-hide-sm-only">河南省漯河市源汇区问十乡问十村4组22号</td>
-                <td>正常</td>
-                <td class="am-hide-sm-only">超级管理员</td>
-                <td>
-                  <div class="am-dropdown" data-am-dropdown>
-									  <a class="am-btn am-btn-primary am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></a>
-									  <ul class="am-dropdown-content">
-									    <li><a href="#">查看</a></li>
-									    <li><a href="#">修改</a></li>
+                                        <li><a href="#">角色</a></li>
 									    <li><a href="#">删除</a></li>
 									  </ul>
 									</div>
@@ -271,5 +274,14 @@
 <!--<![endif]-->
 <script src="../../js/amazeUI/js/amazeui.min.js"></script>
 <script src="../../js/amazeUI/js/app.js"></script>
+<script type="text/javascript" charset="UTF-8" src="../../js/amazeUI/amazeUtil.js"></script>
+<script>
+  function del(){
+      $.confirm("系统提示","确定要删除该老师的信息吗?",function(){
+          $.alert("系统提示","删除成功");
+      });
+  }
+
+</script>
 </body>
 </html>
